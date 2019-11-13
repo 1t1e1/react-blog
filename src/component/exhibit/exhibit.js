@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React from 'react';
 import BlogCard from './blogCard';
 
 const exhibit = (props) =>{
@@ -7,6 +7,8 @@ const exhibit = (props) =>{
                 title={blog.title} 
                 message={blog.message}
                 author={blog.author}
+                key={blog.id}
+                onClick={ ()=>props.onClick(blog.id)}
             />        
     );
 
