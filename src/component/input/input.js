@@ -6,9 +6,10 @@ const input = (props)=>{
         <>
         <h1> Input Page  </h1>
         <input className="inputText" type="text" placeholder="title" required value="title" name="title"/>
-        <input className="inputText" type="text" placeholder="Blog Post" required value="blogmessage" name="blogmessage"/>
+        <textarea className="textarea" placeholder="Blog Post">
+        </textarea>
         <input className="inputText" type="text" placeholder="author" required value="author" name="author"/>
-        <button onClick={props.handleSubmit}> Submit </button>
+        <div> <button onClick={props.handleSubmit}> Submit </button> </div>
         </>
     );
 }
