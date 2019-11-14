@@ -2,11 +2,13 @@
 
 ## What do I try to do?
 
-Create simple react project that use these.
+Create simple react blog website to learn these.
 
 - [ ] React-router
 
-- 
+- [ ] Request fetch axios 
+
+- [ ] Make a proper form for new blog post.
 
 
 

@@ -20,11 +20,24 @@ const App =() =>{
         });
     }
 
+    const handleSubmit =()=>{
+        setBlogs([
+            ...blogs,
+            {
+                title: "added title 1",
+                message: "new mesaage",
+                author: "tttt",
+                id: "32132",
+            }
+        ]);
+    
+    }
+    
     return (
         <div className="App">
             <h1> home </h1>
             {true && <Exhibit blogs={blogs} onClick={(e)=>{handleClick(e) }} />}
-            <InputPage />
+            <InputPage handleSubmit={handleSubmit} />
             { selectedOne.loading &&             
             <BlogPost 
                 title={selectedOne.blog.title} 
