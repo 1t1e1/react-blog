@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import { BrowserRouter , Route , Link } from 'react-router-dom';
 import './App.css';
 import Exhibit from '../component/exhibit/exhibit';
 import InputPage from '../component/input/input';
@@ -34,19 +35,50 @@ const App =() =>{
     }
     
     return (
+        <BrowserRouter >
         <div className="App">
-            <h1> home </h1>
-            {true && <Exhibit blogs={blogs} onClick={(e)=>{handleClick(e) }} />}
-            <InputPage handleSubmit={handleSubmit} />
-            { selectedOne.loading &&             
-            <BlogPost 
-                title={selectedOne.blog.title} 
-                author={selectedOne.blog.author}
-                message={selectedOne.blog.message} 
-            />
-            }
+            <section>
+                <nav>
+                    <ul>
+                        <li><Link to="/">Home</Link> </li>
+                        <li><Link to="/new-post">New Post</Link></li>
+                        <li><Link to="/blogpost">BlogPost</Link></li>
+                    </ul>
+                </nav>
+            </section>
+            <Route path="/" exact >
+            <section>
+                <Exhibit blogs={blogs} onClick={(e)=>{handleClick(e) }} />
+            </section>
+            </Route>
+
+            <Route path="/new-post" component={NewPost}>
+            </Route>
+
+            <Route path="/:id">
+            <section>
+                { selectedOne.loading ?
+                <BlogPost 
+                    title={selectedOne.blog.title} 
+                    author={selectedOne.blog.author}
+                    message={selectedOne.blog.message} 
+                />
+                : "Loading..."
+                }
+            </section>
+            </Route>
         </div>
+        </BrowserRouter>
     );
+}
+
+const NewPost = ()=>{
+    return (
+        <section>
+            <InputPage />
+        </section>
+    );
+
 }
 
 export default App;

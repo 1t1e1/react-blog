@@ -1,12 +1,36 @@
+.App ul {
+    margin: 0;
+    padding: 0;
+}
+
+.App li {
+    margin:14px;
+    display: inline-block;
+}
+
+.App a {
+    text-decoration: none;
+    color:black;
+}
+
+.App a:hover {
+    color:#ffaaaa;
+}
+.App a:active {
+    color:#aaafff;
+}
+
 .textarea {
     width:80%;
     height:150px;
+    border: 2px solid black;
 }
 
 
 .inputText {
     width: 80%;
     margin: 20px;
+    border: 2px solid black;
 }
 
 .BlogCard {
